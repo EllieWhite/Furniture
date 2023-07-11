@@ -1,0 +1,116 @@
+.steps {
+    flex-shrink: 0;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 3.75em;
+    @media (max-width: 768px) {
+        margin-top: 2em;
+    }
+
+    &__element {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        flex-shrink: 0;
+        background-color: $primary-color; 
+        @media (max-width: 768px) {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+
+    &__item {
+        display: flex;
+        position: relative;
+        &:not(:last-of-type) {
+            padding-bottom: 3.75em;
+            @media (max-width: 768px) {
+                padding-bottom: 2em;
+            }
+
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 88px;
+                bottom: 0;
+                left: 39px;
+                width: 4px;
+                background-image: url('../img/line.svg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                @media (max-width: 768px) {
+                    left: 29px;
+                    top: 66px;
+                }
+            }
+        }
+
+    }
+
+    &__item-name {
+        font-size: 28px;
+        font-weight: 700;
+        @media (max-width: 768px) {
+            font-size: 22px;
+        }
+    }
+
+    &__item-description {
+        margin-top: 1.2em;
+        opacity: .8;
+        line-height: 1.6;
+        letter-spacing: 0.03em;
+    }
+
+    &__content {
+        margin-left: 1.81em;
+        position: relative;
+        height: 160px;
+        width: 604px;
+        overflow: hidden;
+        @media (max-width: 533px) {
+            height: 250px;
+        }
+    }
+
+    &__animate {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        bottom: 0;
+    }
+}
+
+.animate {
+    .steps__animate {
+        animation-name: slidein;  
+
+        &--1 {
+            animation-duration: 2s;
+        }
+
+        &--2 {
+            animation-duration: 3s;
+        }
+
+        &--3 {
+            animation-duration: 4s;
+        }
+    }
+}
+
+@keyframes slidein {
+    from {
+      top: 100%;
+    }
+  
+    to {
+      top: 0;
+    }
+}

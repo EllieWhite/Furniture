@@ -1,0 +1,49 @@
+.menu {
+    margin-left: -22px;
+    margin-right: -22px;
+    display: flex;
+    @media (max-width: 1024px) {
+        margin-top: auto;
+        margin-left: 0;
+        margin-right: 0;
+        opacity: 0;
+        transition: 0.15s;
+        display: block;
+        position: absolute;
+        top: 100%;
+        background-color: $primary-color;
+        left: -100%;
+        right: 0;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 1em;
+        &--active {
+           opacity: 1;
+           left: 0;
+            @media (max-width: 533px) {
+                padding-top: 120px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            & + .header__actions {
+               opacity: 1;
+            }
+        }
+    }
+
+
+    &__item {
+        color: $light-color;
+        font-weight: 600;
+        padding: 6px;
+        margin-left: 1em;
+        margin-right: 1em;
+        @media (max-width: 1024px) {
+            margin: 1em 0;
+            & a {
+                display: block;
+            }
+        }
+    }
+}

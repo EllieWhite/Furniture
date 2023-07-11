@@ -1,3 +1,14 @@
+body {
+  color: $primary-color;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.2;
+  font-size: 16px;
+  box-sizing: border-box;
+  @media (max-width: 1024px) {
+    font-size: 14px;
+  }
+}
+
 html {
   box-sizing: border-box;
 }
@@ -8,100 +19,124 @@ html {
   box-sizing: inherit;
 }
 
-.page {
-  height: 100%;
-  font-family: var(--font-family, sans-serif);
-  -webkit-text-size-adjust: 100%;
+section {
+  overflow-x: hidden;
+  padding-top: 8.75em;
+  @media (max-width: 768px) {
+      padding-top: 4em;
+  }
 }
 
-.page__body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100%;
-  font-size: 16px;
+.box {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1171px;
+  padding-left: 30px;
+  padding-right: 30px;
+  @media (max-width: 533px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  &--wiht-img {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+    }
+  }
 }
 
-img {
+.wrapper-content {
+  width: 604px;
+  @media (max-width: 1024px) {
+      width: 400px;
+  }
+
+  @media (max-width: 768px) {
+      width: 100%;
+      margin-top: 2em;
+  }
+}
+
+.img-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
   height: auto;
-  max-width: 100%;
-  object-fit: cover;
+  left: calc(50% + 114px);
+  @media (max-width: 768px) {
+    position: relative;
+    left: 0;
+    height: 300px;
+}
+  &__picture {
+    height: 100%;
+    object-fit: cover;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+    @media (max-width: 533px) {
+      height: auto;
+    }
+  }
+}
+
+.text-content { 
+  @media (max-width: 533px) {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9); 
+    padding: 10px 15px;
+    border-radius: 3px;
+    margin-top: -50%;
+    z-index: 1;
+    position: relative;
+  }
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 700;
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 700;
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
-.site-container {
-  overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
-}
-
-.is-hidden {
-  display: none !important; /* stylelint-disable-line declaration-no-important */
-}
-
-.btn-reset {
-  border: none;
-  padding: 0;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-.list-reset {
-  list-style: none;
+h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0;
 }
 
-.input-reset {
-  -webkit-appearance: none;
-  appearance: none;
-  border: none;
-  border-radius: 0;
-  background-color: #fff;
-
-  &::-webkit-search-decoration,
-  &::-webkit-search-cancel-button,
-  &::-webkit-search-results-button,
-  &::-webkit-search-results-decoration {
-    display: none;
-  }
+li {
+  list-style-type: none;
 }
 
-.visually-hidden {
-  position: absolute;
-  overflow: hidden;
-  margin: -1px;
-  border: 0;
+ul {
+  margin: 0;
   padding: 0;
-  width: 1px;
-  height: 1px;
-  clip: rect(0 0 0 0);
 }
 
-.container {
-  margin: 0 auto;
-  padding: 0 var(--container-offset);
-  max-width: var(--container-width);
-}
-
-.js-focus-visible :focus:not(.focus-visible) {
-  outline: none;
-}
-
-.centered {
-  text-align: center;
-}
-
-.dis-scroll {
-  position: fixed;
-  left: 0;
-  top: 0;
-  overflow: hidden;
-  width: 100%;
-  height: 100vh;
-  overscroll-behavior: none;
-}
-
-.page--ios .dis-scroll {
-  position: relative;
+.burger {
+  @include burger;
+  color: $light-color;
+  margin-left: 2em;
+  display: none;
+  @media (max-width: 1024px) {
+      display: block;
+  }
 }

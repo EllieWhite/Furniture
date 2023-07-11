@@ -1,0 +1,108 @@
+@import "./form";
+.intro {
+    height: 95vh;
+    position: relative;
+    @media (max-width: 768px) {
+        height: auto;
+        padding-bottom: 3em;
+        padding-top: 0;
+    }
+
+    &__description {
+        margin-top: 1rem;
+        color: $primary-color;
+        opacity: 0.8;
+        font-size: 1.25em;
+        line-height: 1.6;
+        @media (max-width: 768px) {
+            opacity: 1;
+            font-size: 16px;
+        }
+
+        @media (max-width: 533px) {
+            font-size: 1em;
+        }
+    }
+
+    &__form {
+        margin-top: 3.75em;
+        width: 100%;
+        @media (max-width: 768px) {
+            margin-top: 2em;
+        }
+    }
+
+    &__tag {
+        padding: 29px 42px;
+        border: 2.5px solid #000;
+        background-color: #FCFCFC;
+        display: inline-flex;
+        width: 436px;
+        align-items: flex-start;
+        position: absolute;
+        bottom: 9.1%;
+        left: -150px;
+        @media (max-width: 1024px) {
+            padding: 15px 25px;
+            width: auto;
+        }
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    &__num {
+        color: #FCFCFC;
+        font-size: 2rem;
+        font-weight: 700;
+        padding: 0.75rem 1.5rem;
+        background-color: #FFA520;
+        display: inline-block;
+    }
+
+
+    &__tag-content {
+        width: 100%;
+        margin-left: 1.75em;
+        white-space: nowrap;
+    }
+
+    &__tag-text {
+        font-size: 1.5em;
+        font-weight: 500;
+        line-height: 120%;
+    }
+
+    &__line {
+        border-radius: 3px;
+        opacity: 0.8;
+        background-color: $primary-color;
+        height: 7px;
+        max-width: 100%;
+        margin-top: 8px;
+
+        &--big {
+            width: 100%;
+        }
+        
+        &--small {
+            width: 64.6%;
+        }
+    }
+
+    &__video {
+        margin-top: 2em;
+        @media (max-width: 768px) {
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (max-width: 533px) {
+            img {
+                width: 100%;
+            }
+        }
+
+    }
+}
